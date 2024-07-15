@@ -55,3 +55,26 @@ resource "azurerm_stroage_data_lake_gen2_filesystem" "DataLakeFilesystem" {
   name = "nameOfDataLakeFilesystem"
   storage_account_id = azurerm_storage_account.example.id
 }
+
+#Create a Managed Private Endpoint
+resource "azurerm_synapse_private_link_hub" "PrivateEndpoint" {
+  name = "nameOfPrivateLinkHub"
+  resource_group_name = azurerm_resource_group.rg.name
+  location = azurerm_resource_group.rg.location
+  synapse_workspace_id = azurerm_synapse_worksapce.synapse.id
+
+  managed_private_endpoints {
+    name = "nameOfEndpoint"
+    target_resource_id = azurerm_storage_account.example.id
+    subresource_name = "blob"
+  }
+}
+
+#Add output for Synapse Workspace after Deployment
+output "synapse_workspace_endpoint" {
+  value = azurerm_synapse_workspace.synapse.web_endpoint
+}
+
+output "synapse_workspace_id" {
+  value = azurerm_synapse_workspace.synapse.id
+}
