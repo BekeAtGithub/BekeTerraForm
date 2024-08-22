@@ -1,4 +1,4 @@
-#Define the Provider
+#Define the Provider 
 provider "azurerm" {
   features{}
 }
