@@ -1,7 +1,7 @@
 #Define Provider
 provider "azurerm" {
   features {}
-}
+} 
 
 #Provision Resource Group
 resource "azurerm_resource_group" "rg" {
