@@ -1,0 +1,7 @@
+{
+    "clientId": "<your-client-id>",
+    "clientSecret": "<your-client-secret>",
+    "subscriptionId": "<your-subscription-id>",
+    "tenantId": "<your-tenant-id>"
+  }
+  
