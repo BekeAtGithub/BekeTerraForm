@@ -1,0 +1,49 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  TF_VERSION: '1.1.7'
+  AZURE_SUBSCRIPTION: '<your-azure-subscription-id>'
+  RESOURCE_GROUP_NAME: 'aks-rg'
+  LOCATION: 'East US'
+  AKS_CLUSTER_NAME: 'myAKSCluster'
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '$(AZURE_SUBSCRIPTION)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      # Install Terraform
+      curl -sSL https://releases.hashicorp.com/terraform/$(TF_VERSION)/terraform_$(TF_VERSION)_linux_amd64.zip -o terraform.zip
+      unzip terraform.zip
+      sudo mv terraform /usr/local/bin/
+      terraform -v
+
+      # Change directory to your Terraform files
+      cd $(Build.SourcesDirectory)
+
+      # Initialize Terraform
+      terraform init
+
+      # Run Terraform plan
+      terraform plan \
+        -var="client_id=$(ARM_CLIENT_ID)" \
+        -var="client_secret=$(ARM_CLIENT_SECRET)" \
+        -var="aks_cluster_name=$(AKS_CLUSTER_NAME)" \
+        -var="location=$(LOCATION)" \
+        -var="resource_group_name=$(RESOURCE_GROUP_NAME)"
+
+      # Apply the changes (you can condition this step based on approvals or environments)
+      terraform apply -auto-approve \
+        -var="client_id=$(ARM_CLIENT_ID)" \
+        -var="client_secret=$(ARM_CLIENT_SECRET)" \
+        -var="aks_cluster_name=$(AKS_CLUSTER_NAME)" \
+        -var="location=$(LOCATION)" \
+        -var="resource_group_name=$(RESOURCE_GROUP_NAME)"

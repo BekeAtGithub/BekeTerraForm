@@ -1,0 +1,6 @@
+image:
+  repository: "bitnami/mysql"
+  tag: "8.0.25-debian-10-r17"
+mysql:
+  auth:
+    rootPassword: "yourpassword"

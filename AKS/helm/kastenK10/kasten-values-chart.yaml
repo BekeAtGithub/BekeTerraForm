@@ -1,0 +1,17 @@
+#Configure Azure Blob storage for another backup target
+global:
+  persistence:
+    storageClass: default  # Specify the storage class to use for Kasten persistence
+  azure:
+    blobStore:
+      # Configure the storage account details for backups
+      storageAccountName: "<your-storage-account>"
+      storageAccountKey: "<your-storage-account-key>"
+      container: "kasten-backups"
+
+ingress:
+  enabled: true
+  hosts:
+    - host: kasten.example.com
+  annotations:
+    kubernetes.io/ingress.class: nginx
