@@ -66,5 +66,7 @@ def monitor_waf():
     print("Fetching WAF metrics for the past hour...")
     get_waf_metrics(resource_group_name, application_gateway_name)
 
+#python interpretter has __name__ as a special code word to invoke a file, and its common to just name is __main__ but you can name it whatever you want, but its standard, just name it main. 
+#this is great for helping prevent accidental script invocations where you dont want to invoke it
 if __name__ == "__main__":
     monitor_waf()
