@@ -1,4 +1,4 @@
-#For managed identities
+#For managed identities 
 resource "azurerm_data_factory" "adf" {
   name                = var.adf_name
   location            = azurerm_resource_group.rg.location
