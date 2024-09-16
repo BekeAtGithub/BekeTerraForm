@@ -1,4 +1,4 @@
-##This primary file defines managed disk primary values
+##This primary file defines managed disk values, shows the helm and azure providers - whereas the ACTUAl providers.tf file shows the providers of the AKS cluster itself where the containers are and what their providers are
 provider "azurerm" {
   features {}
 }
