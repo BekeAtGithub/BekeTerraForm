@@ -1,4 +1,4 @@
-
+#This primary file defines the gateway with the Web App Firewall component
 provider "azurerm" {
   features {}
 }
