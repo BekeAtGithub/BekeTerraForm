@@ -1,3 +1,4 @@
+#This file stores common values; key/value pair variables, or maybe other kinds of variables
 variable "resource_group_name" {
   description = "The name of the resource group"
   type        = string
