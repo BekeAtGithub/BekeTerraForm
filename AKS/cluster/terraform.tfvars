@@ -1,4 +1,4 @@
-
+#extended values for the variables - varies per environment
 resource_group_name     = "aks-rg"
 location                = "East US"
 aks_cluster_name        = "myAKSCluster"
