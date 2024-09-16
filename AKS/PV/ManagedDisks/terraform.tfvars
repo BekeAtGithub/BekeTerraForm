@@ -1,4 +1,4 @@
-
+#This file defines the values for the variables, which can be customized as per your environment.
 resource_group_name        = "my-resource-group"
 location                   = "East US"
 aks_cluster_name           = "my-aks-cluster"
