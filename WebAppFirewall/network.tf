@@ -1,4 +1,4 @@
-#This is basically the main.tf type file, has basic networking components like the resource group, virtual network, and subnet
+#networking components; the resource group, virtual network, and subnet
 resource "azurerm_resource_group" "example" {
   name     = var.resource_group_name
   location = var.location
