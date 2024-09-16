@@ -1,4 +1,4 @@
-
+#the main.tf file for nginx ingress controller
 provider "azurerm" {
   features {}
 }
