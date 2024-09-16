@@ -1,4 +1,4 @@
-
+##This primary file defines managed disk primary values
 provider "azurerm" {
   features {}
 }
