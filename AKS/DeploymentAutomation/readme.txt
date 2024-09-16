@@ -9,7 +9,7 @@ Azure DevOps Pipeline:
         Plan: Runs terraform plan to review the actions Terraform will perform.
         Apply: Runs terraform apply to deploy the AKS cluster, assuming the Terraform plan is approved.
 
-    ** Important to require secrets to be stored securely. You will need to set up the following secrets:
+    ** Important to require secrets to be stored securely in Azure Key Vault or Hashicorp vault or something like this. You will need to set up the following secrets:
 
     Azure DevOps:
         ARM_CLIENT_ID: The Client ID of your Azure Service Principal.
