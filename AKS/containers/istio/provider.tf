@@ -1,3 +1,4 @@
+#providers, keys, certificates for vendors providing their features and services
 provider "azurerm" {
   features {}
 }
