@@ -1,4 +1,4 @@
-
+#main file to setup container service fabric on azure cluster
 provider "azurerm" {
   features {}
 }
