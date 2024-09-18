@@ -23,7 +23,7 @@ while True:
   print(f"Pipeline run status": {pipeline_run.status}")
   if pipeline_run.status in ("Succeeded","Failed","Cancelled"):
     break
-  time.sleep(30) #wait 30 seconds before checking the status again
+  time.sleep(30) #wait 30 seconds before checking the status again 
 
 #check final status
 if pipeline_run.status == 'Succeeded':
