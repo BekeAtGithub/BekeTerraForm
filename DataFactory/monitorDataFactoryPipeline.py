@@ -9,7 +9,7 @@ resource_group_name = 'rgName'
 data_factory_name = 'ADFname'
 pipeline_name = 'pipelineName'
 
-#authenticate and create an ADF management client
+#authenticate and create an ADF management client 
 credentials = DefaultAzureCredential()
 adf_client = DataFactoryManagementClient(credentials, subscription_id)
 
