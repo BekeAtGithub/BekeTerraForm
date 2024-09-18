@@ -17,7 +17,7 @@ adf_client = DataFactoryManagementClient(credentials, subscription_id)
 run_response = adf_clilent.pipelilnes.create_run(resource_group_name, data_factory_name, pipelilne_name)
 run_id = run_response.run_id
 
-#monitor pipeline run status
+#monitor pipeline run status 
 while True:
   pipeline_run = adf_client.pipeine_runs.get(resource_group_name, data_factory_name, run_id)
   print(f"Pipeline run status": {pipeline_run.status}")
