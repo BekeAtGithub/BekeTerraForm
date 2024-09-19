@@ -5,7 +5,7 @@ resource "azurerm_application_gateway" "example" {
   resource_group_name = azurerm_resource_group.example.name
 
   sku {
-    name     = "WAF_v2"        # Use WAF_v2 for Web Application Firewall version 2
+    name     = "WAF_v2"        # Use WAF_v2 for Web Application Firewall version 2 
     tier     = "WAF_v2"        # WAF tier for Web Application Firewall
     capacity = 2               # Define the instance capacity (e.g., 2 instances)
   }
