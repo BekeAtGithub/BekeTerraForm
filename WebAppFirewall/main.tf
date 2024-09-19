@@ -72,6 +72,6 @@ resource "azurerm_application_gateway" "example" {
   }
 
   tags = {
-    environment = "production"           # Add tags for better management
+    environment = "production"           # Add tags for better management 
   }
 }
