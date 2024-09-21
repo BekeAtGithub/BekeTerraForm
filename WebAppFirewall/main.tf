@@ -1,4 +1,4 @@
-#This primary file defines the gateway with the Web App Firewall component  
+#This primary file defines the gateway with the Web App Firewall component
 resource "azurerm_application_gateway" "example" {
   name                = "myApplicationGateway"
   location            = azurerm_resource_group.example.location
