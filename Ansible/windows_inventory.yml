@@ -1,0 +1,13 @@
+#step 1, Create an Inventory File for Windows Server
+# replace your_windows_username and your_windows_password with the appropriate credentials.
+# replace ansible_host with the IP address or hostname of your Windows server.
+
+[windows]
+windows_host ansible_host=192.168.1.100
+
+[windows:vars]
+ansible_user=your_windows_username
+ansible_password=your_windows_password
+ansible_connection=winrm
+ansible_winrm_transport=ntlm
+ansible_winrm_server_cert_validation=ignore
