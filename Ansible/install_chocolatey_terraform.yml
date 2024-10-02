@@ -1,0 +1,22 @@
+---
+- name: Install Chocolatey and Terraform on Windows Server
+  hosts: windows
+  become: yes
+  tasks:
+    - name: Install Chocolatey
+      win_chocolatey:
+        name: chocolatey
+        state: present
+
+    - name: Install Terraform with Chocolatey
+      win_chocolatey:
+        name: terraform
+        state: present
+
+    - name: Verify Terraform installation
+      win_shell: terraform version
+      register: terraform_version
+
+    - name: Display Terraform version installed
+      debug:
+        var: terraform_version.stdout
