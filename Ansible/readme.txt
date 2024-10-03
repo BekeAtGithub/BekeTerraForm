@@ -1,3 +1,6 @@
+Step 1: create inventory with windows_inventory.yml, 
+Step 2: run playbook install_chocolatey_terraform.yml 
+
 Install Terraform with Chocolatey
 
 Verifies Terraform Installation with the win_shell module that runs the command terraform version - which verifies the terraform run job status
